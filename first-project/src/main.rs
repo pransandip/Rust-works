@@ -1,7 +1,8 @@
 /*
 * You have explicit and implicit type
 * name Shadowing
-* const you can not redefine
+* variables are immutable
+* const can not be redefine
 */
 
 fn data_types() {
