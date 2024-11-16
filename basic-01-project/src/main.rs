@@ -1,4 +1,6 @@
 /*
+* You have four spaces before println
+* this macro only takes strings
 * You have explicit and implicit type
 * name Shadowing
 * variables are immutable
