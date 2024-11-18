@@ -1,5 +1,5 @@
 /*
-*Function, Expressions and Statement
+* Function, Expressions and Statement
 */
 
 // expression

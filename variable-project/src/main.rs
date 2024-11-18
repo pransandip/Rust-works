@@ -24,7 +24,6 @@ fn destruct() {
 }
 
 // Destructuring Assignment
-
 fn destructuring_assignment() {
     let (x, y);
 
@@ -34,9 +33,16 @@ fn destructuring_assignment() {
     assert_eq!([x, y], [3, 2]);
     println!("success!")
 }
+
+// Type conversion
+fn conversion() {
+    let v: u16 = 38_u8 as u16;
+    println!("{}", v);
+}
 fn main() {
     a();
     define_x();
     destruct();
     destructuring_assignment();
+    conversion();
 }
