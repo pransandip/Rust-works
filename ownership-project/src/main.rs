@@ -13,7 +13,7 @@ fn main() {
                                // do stuff with s, and s is a string literal it's a fixed in size
                                // string literals directly stores in binary
 
-        let txt1: String = String::from("Sandy!"); // txt is String type and dynamic in size stored in heap memory
+        let txt1: String = String::from("Sandy!"); // txt1 is String type and dynamic in size stored in heap memory
         let txt2: String = txt1; // Move (not shallow copy) txt1 will be droped
         let txt3: String = txt2.clone();
 
