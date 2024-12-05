@@ -1,4 +1,14 @@
 use std::ops::{Range, RangeInclusive};
+fn main() {
+    for i in 0..10 {
+        println!("{}", i);
+    }
+    check_odd_even();
+    print_char();
+    assert_eq!((1..5), Range { start: 1, end: 5 });
+    assert_eq!((1..=5), RangeInclusive::new(1, 5));
+    println!("success!");
+}
 
 // print char in decimal format
 fn print_char() {
@@ -16,9 +26,13 @@ fn print_char() {
     }
 }
 
-fn main() {
-    print_char();
-    assert_eq!((1..5), Range { start: 1, end: 5 });
-    assert_eq!((1..=5), RangeInclusive::new(1, 5));
-    println!("success!");
+// conditionals,loops
+fn check_odd_even() {
+    let is_even: bool = false;
+
+    if is_even {
+        println!("The Number is even");
+    } else if !is_even {
+        println!("The Number is odd");
+    }
 }

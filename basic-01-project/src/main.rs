@@ -38,4 +38,14 @@ fn main() {
     redeclare();
     println!("----constants---");
     constants();
+
+    // overflow
+    let mut x: i8 = 10;
+
+    // If you have run time logic compliler not going to check it
+    for _i in 0..1000 {
+        x = x + 100;
+    }
+
+    println!("x = {}", x)
 }

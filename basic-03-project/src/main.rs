@@ -1,6 +1,6 @@
 /*
 * rust program auto imports preludes like
-* fn, println! from rust std library
+* fn, println! main() from rust std library
 */
 
 use std::io;
