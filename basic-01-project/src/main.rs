@@ -1,8 +1,8 @@
 /*
 * You have four spaces before println
-* this macro only takes strings
+* println!() macro takes strings
 * You have explicit and implicit type
-* name Shadowing
+* name shadowing
 * variables are immutable
 * const can not be redefine
 */

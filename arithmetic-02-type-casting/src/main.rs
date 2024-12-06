@@ -1,3 +1,7 @@
+// assert!() must return true
+// assert_eq!() two items inside must equal each other
+// assert_ne!() two items inside must not equal each other
+
 // Bitwise operation
 fn bitwise_operation() {
     println!("0011 AND 0101 is {:04b}", 0b0011u32 & 0b0101u32);
@@ -5,7 +9,7 @@ fn bitwise_operation() {
     println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101u32);
 }
 
-fn main() {
+fn calculations() {
     // integer addition
     assert!(1u32 + 2u32 == 3u32);
 
@@ -19,5 +23,17 @@ fn main() {
 
     assert!(24_i8 % 5_i8 == 4_i8);
 
+    println!("success!");
+}
+
+const REAL_NAME: &str = "sandip roy";
+
+fn main() {
+    let my_name = "sandip roy";
+    assert!(my_name == "sandip roy", "Name must be: {}", REAL_NAME);
+    assert_eq!(my_name, "sandip roy", "Name must be: {}", REAL_NAME);
+    assert_ne!(my_name, "sandy", "Two values must not be equal");
+
     bitwise_operation();
+    calculations();
 }
