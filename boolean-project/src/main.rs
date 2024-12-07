@@ -1,6 +1,25 @@
 fn main() {
     check_male();
+    control_flow();
     check_odd_even();
+    check_true_false();
+}
+
+// conditionals
+fn control_flow() {
+    let condition: bool = true;
+    let number: u8 = if condition { 5 } else { 6 };
+    println!("{}", number);
+}
+
+fn check_true_false() {
+    let is_even: bool = false;
+
+    if is_even {
+        println!("The Number is even");
+    } else if !is_even {
+        println!("The Number is odd");
+    }
 }
 
 fn check_male() {
@@ -18,6 +37,10 @@ fn check_male() {
     }
 }
 
+fn is_even(x: i32) -> bool {
+    return x % 2 == 0;
+}
+
 fn check_odd_even() {
     let x: i32 = 99;
     let is_even = is_even(x);
@@ -27,8 +50,4 @@ fn check_odd_even() {
     } else {
         println!("{} is odd", x);
     }
-}
-
-fn is_even(x: i32) -> bool {
-    return x % 2 == 0;
 }

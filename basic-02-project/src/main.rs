@@ -12,17 +12,31 @@ fn arrays() {
     let mut arr: [i32; 5] = [1, 2, 3, 4, 5];
     arr[4] = 6;
     println!("{}", arr[4]);
+
+    let byte = [0; 8]; // length of arr is 8 and all elements are 0
+    println!("2nd element of byte array is: {}", byte[1]);
+}
+
+fn datatypes() {
+    let letter = 'a';
+    let true_or_false = true;
+    let floating_point: f32 = 10.39;
+    println!("{}, {}, {}", letter, !true_or_false, floating_point);
+}
+
+fn tuples() {
+    let mut tup1: (i32, bool, char) = (1, true, 'a');
+    tup1.0 = 10;
+    println!("{}", tup1.0);
+
+    let tup2: (&str, u8) = ("Sandip Roy", 56);
+    let (name, weight) = tup2;
+
+    println!("name is: {} and weight: {}kg", name, weight)
 }
 
 fn main() {
-    let floating_point: f32 = 10.39;
-    let true_or_false = true;
-    let letter = 'a';
-    println!("{}, {}, {}", floating_point, true_or_false, letter);
-
-    let mut tup = (1, true, 'a');
-    tup.0 = 10;
-    println!("{}", tup.0);
-
     arrays();
+    tuples();
+    datatypes();
 }

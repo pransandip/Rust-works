@@ -1,8 +1,10 @@
 /*
-* Function, Expressions and Statement
-*/
+ * Function, Expressions and Statement
+ * expression perform some action and returns a value.
+ * statement perform some action but do not return a value.
+ */
 
-// expression
+// Expression
 fn add_numbers(x: i32, y: i32) -> i32 {
     x + y
 }
