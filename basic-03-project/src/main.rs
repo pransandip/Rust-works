@@ -1,5 +1,5 @@
 // redeclare
-fn redeclare() {
+fn redeclare1() {
     let x: u8 = 4;
     println!("x is {}", x);
     let x: u8 = 5;
@@ -8,8 +8,8 @@ fn redeclare() {
     println!("x is {}", x);
 }
 
-// can easily change type in re definition
-fn change_type_redeclare() {
+/* easily change type in re definition */
+fn redeclare2() {
     let k: u8 = 10;
     println!("k is {}", k);
 
@@ -17,16 +17,12 @@ fn change_type_redeclare() {
     println!("k is {}", k);
 }
 
-/*
- * Name Shadowing:
- * using same variable name from different scope
- */
-
+/* Name Shadowing: using same variable name from different scope */
 fn name_shadowing() {
     let y: u8 = 4;
     println!("y is {}", y);
     {
-        let y: u8 = 2;
+        let y: u8 = y + 2;
         println!("y is {}", y);
     }
     let y: u8 = y + 1;
@@ -45,9 +41,40 @@ fn scope() {
     println!("z is {}", z);
 }
 
+// len() gives the size is bytes
+// char length will be four bytes in size
+fn check_bytes1() {
+    println!("{}", "a".len()); // These are strings not char because it is in double quotes and string can be any sort of length
+    println!("{}", "ą".len());
+    println!("{}", "£".len());
+    println!("{}", "Ⅴ".len());
+}
+
+fn check_bytes2() {
+    let slice = "Hello!";
+    println!("slice is {} bytes", slice.len());
+    let slice2 = "﷼";
+    println!("slice2 is {} bytes", slice2.len())
+}
+
+fn check_length() {
+    let slice = "Hello";
+    println!("length of slice is {} char long", slice.chars().count());
+}
+
 fn main() {
-    redeclare();
-    change_type_redeclare();
+    println!("--------redeclare1-------");
+    redeclare1();
+    println!("--------redeclare2-------");
+    redeclare2();
+    println!("--------name shadowing-------");
     name_shadowing();
+    println!("--------scope-------");
     scope();
+    println!("--------check_bytes1-------");
+    check_bytes1();
+    println!("--------check_bytes2-------");
+    check_bytes2();
+    println!("--------check_length-------");
+    check_length();
 }

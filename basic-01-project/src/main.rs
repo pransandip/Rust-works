@@ -1,21 +1,23 @@
 /*
-* You have four spaces before println
-* println!() macro takes strings
+* You have four spaces before println!()
 * You have explicit and implicit type
-* name shadowing
 * variables are immutable
-* const can not be redefine
+* const can't be redefine
+* name shadowing
 */
+
+/* only u8 as a cast as a 'char', not i32 */
+/* usize = 64 bits *if possible* - if not, 32 bit */
 
 fn mutable() {
     let mut x = 4;
     println!("x is: {}", x);
     x = 5;
-    println!("x is: {}", x);
+    println!("x is: {}", x as u8 as char); // double cast
 }
 
 fn redeclare() {
-    let y = 8;
+    let y = 222;
     println!("y is: {}", y);
     {
         // scope changed
@@ -23,7 +25,7 @@ fn redeclare() {
         println!("y is: {}", y);
     }
     let y = y + 2;
-    println!("y is: {}", y);
+    println!("y is: {}", y as u8);
 }
 
 fn constants() {
@@ -46,6 +48,5 @@ fn main() {
     for _i in 0..1000 {
         x = x + 100;
     }
-
     println!("x = {}", x)
 }

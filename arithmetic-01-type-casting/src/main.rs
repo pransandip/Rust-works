@@ -1,21 +1,24 @@
-// typeConvertion
+/*--------- TypeConvertion ----------*/
+
 fn convertion1() {
     let m = 127_000 as i64;
     let n = 20_i32;
     let p = m / (n as i64);
-    println!("{}", p);
+    println!("p: {}", p);
 }
 
 fn convertion2() {
-    // let x: u8 = 9; // 0 to 255
-    // let y: i8 = 10; // -128 to 127
-    // let z = x + y;
-    // println!("{}", z);
+    let x: u8 = 9; // 0 to 255
+    let y: i8 = 10; // -128 to 127
+    let z = x + (y as u8);
+    println!("z: {}", z);
 
-    let x = 9.5f32;
-    let y = 10.5f32;
-    let z = x + y;
-    println!("{}", z);
+    {
+        let x = 9.5f32;
+        let y = 10.5f32;
+        let z = x + y;
+        println!("z as float: {}", z);
+    }
 }
 
 fn convertion3() {
