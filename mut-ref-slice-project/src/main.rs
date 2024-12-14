@@ -1,12 +1,77 @@
-// mutable reference
+// The Rules of References
+// 1. At any given time, you can have either one mutable
+// reference or any number of immutable reference.
+// 2. References must always be valid.
 
 fn main() {
     mut_ref();
+    check_length();
+    string_slices();
 }
 
+// Mutable reference
 fn mut_ref() {
-    let mut s = String::from("hello");
+    let mut s: String = String::from("Sandy ");
     change(&mut s);
+    println!("s: {}", s)
 }
 
-fn change(_some_string: &mut String) {}
+fn change(_some_string: &mut String) {
+    _some_string.push_str("Roy");
+}
+
+/*-------- dangling references ---------*/
+
+// fn check_ref() {
+//     let reference_to_nothing = dangle();
+// }
+
+// fn dangle() -> &String {
+//     let s = String::from("sam");
+//     &s
+// }
+
+/*---------------- End ----------------*/
+
+fn check_length() {
+    let mut s = String::from("hello world!");
+    let word = first_word(&s);
+    println!("word1: {}", word);
+    s.clear(); // empty string
+}
+
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+    s.len()
+}
+
+// Slice
+fn string_slices() {
+    let s = String::from("hello world");
+    let _hello = &s[..5]; // if we starting begining of the string we can omit 0
+    let _world = &s[6..11]; // if our range continious to the end of the string can omit 11
+    let _hello_world = &s[..];
+
+    let word = first_word_2(&s);
+    println!("word2: {}", word);
+}
+
+// String reference (&s) automaically coworks to string slice (&str)
+fn first_word_2(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        println!("i: {}", i);
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}

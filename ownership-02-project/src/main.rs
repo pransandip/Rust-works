@@ -4,6 +4,12 @@
 // 3. When owner goes out of scope, the value will be droped.
 // 4. Rust has a copy trait a simple type stored on the stack such as (int boolean and char) this traits allows those types to be copied instade of move
 
+// The Rules of References
+// 1. At any given time, you can have either one mutable reference
+// or any number of immutable reference.
+//
+// 2. References must always be valid.
+
 fn main() {
     {
         let words = String::from("Ownership");
@@ -40,13 +46,14 @@ fn main() {
         println!("s5: {}", s5)
     }
 
+    /*  you can't have mut reference if imutable reference already exists */
     {
         let mut s: String = String::from("King");
 
         let r1: &String = &s;
         let r2: &String = &s;
 
-        println!("r1: {}, r2: {}", r1, r2);
+        println!("r1: {}, r2: {}", r1, r2); // here r1 and r2 scope ends so we can declare mut reference
 
         let r3: &mut String = &mut s;
         println!("r3: {}", r3);
