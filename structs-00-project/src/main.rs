@@ -19,5 +19,10 @@ fn main() {
         color: my_colours,
     };
 
+    println!(
+        "my_colours: ({},{},{}), size: {}",
+        size_and_color.color.0, size_and_color.color.1, size_and_color.color.2, size_and_color.size
+    );
+
     println!("{:?}", size_and_color);
 }
