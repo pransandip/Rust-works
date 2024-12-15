@@ -1,7 +1,7 @@
 /*--------- TypeConvertion ----------*/
 
 fn convertion1() {
-    let m = 127_000 as i64;
+    let m = 127_000 as i64; // let binding
     let n = 20_i32;
     let p = m / (n as i64);
     println!("p: {}", p);

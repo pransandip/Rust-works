@@ -1,10 +1,11 @@
 /*
-* You have four spaces before println!()
-* You have explicit and implicit type
-* variables are immutable
-* const can't be redefine
-* name shadowing
-*/
+ * You have four spaces before println!()
+ * You have explicit and implicit type
+ * variables are immutable
+ * const can't be redefine
+ */
+
+/* Shadowing: when you shadow a variable, you don't destroy it. you block it. */
 
 /* only u8 as a cast as a 'char', not i32 */
 /* usize = 64 bits *if possible* - if not, 32 bit */
