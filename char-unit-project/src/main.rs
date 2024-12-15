@@ -12,8 +12,8 @@ fn check_size() {
     println!("success!")
 }
 
-/* string will be in double qoutes,
- * char will be in single qoutes */
+// 1. string will be in double qoutes
+// 2. char will be in single qoutes
 
 fn print_char(c: char) {
     println!("{}", c)
@@ -65,7 +65,6 @@ fn _explicitly_ret_unit() -> () {
 }
 
 // Size of unit type
-
 fn main() {
     check_size();
     string_or_char();

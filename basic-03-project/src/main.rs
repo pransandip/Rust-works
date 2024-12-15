@@ -1,3 +1,5 @@
+/* Shadowing: when you shadow a variable you don't destroy it. you block it. */
+
 // redeclare
 fn redeclare1() {
     let x: u8 = 4;
@@ -62,6 +64,23 @@ fn check_length() {
     println!("length of slice is {} char long", slice.chars().count());
 }
 
+// Shadowing
+fn times_two(number: i32) -> i32 {
+    number * 2
+}
+
+fn shadowing() {
+    let final_number = {
+        let y = 10;
+        let x = 9; // x starts at 9
+        let x = times_two(x); // shadow with new x: 18
+        let x = x + y; // shadow with new x: 28
+        x // return: x final_number is now the value of x
+    };
+
+    println!("The number is now: {}", final_number)
+}
+
 fn main() {
     println!("--------redeclare1-------");
     redeclare1();
@@ -77,4 +96,6 @@ fn main() {
     check_bytes2();
     println!("--------check_length-------");
     check_length();
+    println!("--------shadowing-------");
+    shadowing();
 }

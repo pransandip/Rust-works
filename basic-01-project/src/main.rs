@@ -1,9 +1,19 @@
 /*
- * You have four spaces before println!()
- * You have explicit and implicit type
- * variables are immutable
- * const can't be redefine
- */
+* Primitive dataTypes: Basic/Fundamental data type used to declare a value
+* Primitive data types has two category: 1.) Scalar type 2.) Compound type
+* Scalar: A scalar type represents a single value. Rust has four primary
+* scalar types: integers, floating-point numbers, Booleans, and characters.
+* Compound: compound types can group multiple values into one type.
+* Rust has two primitive compound types: tuples and arrays.
+*/
+
+// 1. Tuple is fixed length sequence of elements that is imutable
+// 2. arrays have to have same element inside
+
+// 1. You have four spaces before println!()
+// 2. You have explicit and implicit type
+// 3. variables are immutable
+// 4. const can't be redefine
 
 /* Shadowing: when you shadow a variable, you don't destroy it. you block it. */
 

@@ -2,7 +2,7 @@
 // 1. Each value in rust has a variable that's called its owner, means one variable one owner.
 // 2. There can only be one owner at a time, means variable can't have two owner at the same time.
 // 3. When owner goes out of scope, the value will be droped.
-// 4. Rust has a copy trait a simple type stored on the stack such as (int boolean and char) this traits allows those types to be copied instade of move
+// 4. Rust has a copy trait, a simple type stored on the stack such as (int boolean and char) this traits allows those types to be copied instade of move
 
 // The Rules of References
 // 1. At any given time, you can have either one mutable reference
@@ -37,28 +37,28 @@ fn main() {
     {
         let x: i32 = 15;
         makes_copy(x);
-        println!("{}", x)
+        println!("makes_copy: {}", x)
     }
 
     {
         let s1: String = gives_ownership();
-        let s2: String = String::from("value");
+        let s2: String = String::from("drinks");
         let s3: String = takes_and_gives_back_ownership(s2);
         println!("{} {}", s1, s3);
     }
     {
         let s1: String = String::from("Sandip!");
         let len: usize = calculate_length(&s1);
-        println!("length of {} is {}", s1, len)
+        println!("length of {} is {} bytes", s1, len)
     }
 }
 
 fn takes_ownership(some_string: String) {
-    println!("{}", some_string)
+    println!("takes_ownership: {}", some_string)
 }
 
 fn makes_copy(some_integer: i32) {
-    println!("{}", some_integer);
+    println!("makes_copy: {}", some_integer);
 }
 
 fn gives_ownership() -> String {
@@ -83,6 +83,6 @@ fn takes_and_gives_back_ownership(a_string: String) -> String {
  * references are immutable by default
  */
 fn calculate_length(s: &String) -> usize {
-    let lenght = s.len(); // len() returns length of a string
+    let lenght = s.len(); // len() returns size of a string in bytes
     lenght
 }
