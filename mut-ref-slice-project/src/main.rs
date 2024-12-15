@@ -5,8 +5,18 @@
 
 fn main() {
     mut_ref();
+    value_ref();
     check_length();
     string_slices();
+}
+
+// Value of reference
+// & = *
+// && = **
+fn value_ref() {
+    let my_number = 8;
+    let my_reference = &my_number;
+    println!("{}", my_number == *my_reference); // valu of reference
 }
 
 // Mutable reference
@@ -21,7 +31,6 @@ fn change(_some_string: &mut String) {
 }
 
 /*-------- dangling references ---------*/
-
 // fn check_ref() {
 //     let reference_to_nothing = dangle();
 // }
@@ -30,7 +39,6 @@ fn change(_some_string: &mut String) {
 //     let s = String::from("sam");
 //     &s
 // }
-
 /*---------------- End ----------------*/
 
 fn check_length() {
