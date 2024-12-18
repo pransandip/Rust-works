@@ -8,6 +8,7 @@ fn main() {
     value_ref();
     check_length();
     string_slices();
+    print_pointer();
 }
 
 // Value of reference
@@ -41,6 +42,7 @@ fn change(_some_string: &mut String) {
 // }
 /*---------------- End ----------------*/
 
+// Check length of the word
 fn check_length() {
     let mut s = String::from("hello world!");
     let word = first_word(&s);
@@ -82,4 +84,11 @@ fn first_word_2(s: &str) -> &str {
     }
 
     &s[..]
+}
+
+// print pointer (memory address)
+fn print_pointer() {
+    let number: i8 = 9;
+    let number_ref = &number;
+    println!("{:p}", number_ref);
 }

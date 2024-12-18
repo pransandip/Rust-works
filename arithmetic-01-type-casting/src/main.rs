@@ -1,5 +1,4 @@
 /*--------- TypeConvertion ----------*/
-
 fn convertion1() {
     let m = 127_000 as i64; // let binding
     let n = 20_i32;
@@ -31,6 +30,7 @@ fn convertion3() {
 fn type_of<T>(_: &T) -> String {
     format!("{}", std::any::type_name::<T>())
 }
+
 fn main() {
     convertion1();
     convertion2();

@@ -44,7 +44,6 @@
 
 fn main() {
     let mut empty_string = String::new(); // An empty string
-
     let my_string = String::from("Hello, World!"); // A string from a literal
 
     // Adding to an empty string

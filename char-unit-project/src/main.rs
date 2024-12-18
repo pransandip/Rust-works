@@ -1,5 +1,4 @@
 /* size_of_val return size in bytes */
-
 use std::mem::size_of_val;
 
 fn check_size() {

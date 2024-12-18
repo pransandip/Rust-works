@@ -29,8 +29,7 @@ fn add_numbers(x: i32, y: i32) -> i32 {
 
 fn c() {
     let my_num = {
-        let second_num = 9;
-        second_num;
+        let _second_num = 9;
     };
 
     // Debug printing

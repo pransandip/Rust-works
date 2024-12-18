@@ -1,7 +1,6 @@
 fn main() {
     let sentence = String::from("My Name is Sandy Roy");
     let first_word = get_first_word(sentence);
-
     println!("First word is: {}", first_word);
 }
 

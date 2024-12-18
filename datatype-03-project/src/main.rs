@@ -9,11 +9,8 @@
 
 /*
 * Tuple is fixed length sequence of elements that is imutable
+* Arrays have to have same element inside
 */
-
-/*
- * arrays have to have same element inside
- */
 
 fn scalar_types() {
     let x: i16 = 25;
@@ -43,10 +40,7 @@ fn compound_types() {
 }
 
 fn type_casting() {
-    /*
-     * when we initialize x to y we cannot
-     * convert datatype u8 to other.
-     */
+    // when we initialize x to y we cannot convert datatype u8 to other.
     let x: u8 = 4;
     let y = x;
     println!("x: {}, y:{}", x, y);
